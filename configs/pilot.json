@@ -1,0 +1,13 @@
+{
+  "seed": 42,
+  "alpha": 0.5,
+  "clients": 5,
+  "fractions": [0.1, 0.5],
+  "target_policy": "largest_client_by_training_count",
+  "hidden": [64, 32],
+  "threads": 2,
+  "fl": {"rounds": 15, "local_epochs": 1, "batch_size": 512, "lr": 0.001},
+  "fu": {"cycles": 1, "batch_size": 512, "forget_lr": 0.0005, "retain_lr": 0.0005, "regularization": 0.001, "clip": 1.0, "kd_epochs": 1, "kd_lr": 0.001, "temperature": 2.0, "hard_weight": 0.5},
+  "recovery_rounds": 2,
+  "gate": {"minimum_macro_f1": 0.65, "maximum_f1_drop": 0.03, "minimum_original_retrain_mae": 0.001, "minimum_retained_mia_auc": 0.55}
+}

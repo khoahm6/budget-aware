@@ -1,0 +1,45 @@
+# Raw and processed datasets
+/dataset/
+/data/
+
+# Full experiment artifacts and temporary files
+/runs/
+/tmp/
+
+# Model checkpoints and generated arrays
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.pkl
+*.joblib
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+
+# Local credentials and environment settings
+.env
+.env.*
+!.env.example
+.aws/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Root-level reference PDFs and thesis proposal
+/*.pdf
