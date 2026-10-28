@@ -1,0 +1,3 @@
+﻿path,status,policy,scope,predicted_seconds,actual_seconds,body_bytes,budget_violated,absolute_error
+runs\dt\adaptive_20261028_103918\report.json,COMPLETED,dt_adaptive,recovery_only_plus_control_overhead; FU stage excluded,2.399094394924994,0.5735130609999715,413980,False,1.8255813339250224
+runs\dt\all_20261028_103918\report.json,COMPLETED,all,recovery_only_plus_control_overhead; FU stage excluded,2.399094394924994,0.583542116999979,413983,False,1.8155522779250148
