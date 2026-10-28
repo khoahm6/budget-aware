@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "target": 4,
+  "clients": [
+    {
+      "id": 0,
+      "url": "http://client0:8000",
+      "n": 14465,
+      "hist": [
+        8657,
+        5808
+      ],
+      "data_version": "c14abec64ab17a5c637d2df93b390746d3ff6f0c49fe8f78e37750c8e66b04ff"
+    },
+    {
+      "id": 1,
+      "url": "http://client1:8000",
+      "n": 11129,
+      "hist": [
+        11025,
+        104
+      ],
+      "data_version": "a7268fbf822cc888f56012cdd3dff99459c2ffa84cc2d04e446317eb4ba5ac7f"
+    },
+    {
+      "id": 2,
+      "url": "http://client2:8000",
+      "n": 472,
+      "hist": [
+        159,
+        313
+      ],
+      "data_version": "456c972044412c4ddbefe13dc9d3666c4fb2dab7885099745096d1b094d0bbb1"
+    },
+    {
+      "id": 3,
+      "url": "http://client3:8000",
+      "n": 14714,
+      "hist": [
+        1944,
+        12770
+      ],
+      "data_version": "f4e3d596a62df584998f6b4a481f815db3a08b1b6b913afc7406d9be4ccdfe3f"
+    },
+    {
+      "id": 4,
+      "url": "http://client4:8000",
+      "n": 66155,
+      "hist": [
+        675,
+        65480
+      ],
+      "data_version": "983ba764bffbc310aa72735d43c14da1a6ad670583f70cf1efe6befa3f3c77d3"
+    }
+  ],
+  "fl": {
+    "rounds": 15,
+    "local_epochs": 1,
+    "batch_size": 512,
+    "lr": 0.001
+  },
+  "hidden": [
+    64,
+    32
+  ],
+  "input_dim": 38,
+  "seed": 900042,
+  "rounds": 2,
+  "source_run": "runs\\reproduction_pilot",
+  "request_hash": "2db8e94d59a26e929290cfbe636b07957402e644dd53fd3c7f5bbd0ce8f77461",
+  "mode": "infrastructure_only_until_fu_gate_passes",
+  "gate": {
+    "pilot_passed": false,
+    "dt_allowed": false,
+    "reason": "FU evidence insufficient; do not implement DT",
+    "decisions": [
+      {
+        "fraction": 0.1,
+        "method": "fu_no_kd",
+        "checks": {
+          "identifiable": true,
+          "closer_to_retrain": true,
+          "utility_floor": true,
+          "utility_preserved": true,
+          "mia_positive_control": false,
+          "mia_closer_to_retrain": true
+        },
+        "signed_mae_improvement": 0.0009990656981244683,
+        "passed": false
+      },
+      {
+        "fraction": 0.1,
+        "method": "fu_retain_kd",
+        "checks": {
+          "identifiable": true,
+          "closer_to_retrain": true,
+          "utility_floor": true,
+          "utility_preserved": true,
+          "mia_positive_control": false,
+          "mia_closer_to_retrain": true
+        },
+        "signed_mae_improvement": 0.000985818449407816,
+        "passed": false
+      },
+      {
+        "fraction": 0.5,
+        "method": "fu_no_kd",
+        "checks": {
+          "identifiable": true,
+          "closer_to_retrain": true,
+          "utility_floor": true,
+          "utility_preserved": true,
+          "mia_positive_control": false,
+          "mia_closer_to_retrain": true
+        },
+        "signed_mae_improvement": 0.004121184116229415,
+        "passed": false
+      },
+      {
+        "fraction": 0.5,
+        "method": "fu_retain_kd",
+        "checks": {
+          "identifiable": true,
+          "closer_to_retrain": true,
+          "utility_floor": true,
+          "utility_preserved": true,
+          "mia_positive_control": false,
+          "mia_closer_to_retrain": true
+        },
+        "signed_mae_improvement": 0.004114734474569559,
+        "passed": false
+      }
+    ]
+  }
+}
