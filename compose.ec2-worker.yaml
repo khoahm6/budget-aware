@@ -1,0 +1,25 @@
+services:
+  worker:
+    image: ${DT_IMAGE:?Set immutable image tag or digest}
+    init: true
+    restart: unless-stopped
+    environment:
+      CLIENT_ID: ${CLIENT_ID:?Set client ID}
+      DT_TOKEN: ${DT_TOKEN:?Set token}
+      DATA_DIR: /data
+      CACHE_DIR: /cache
+      OMP_NUM_THREADS: "1"
+    ports:
+      - "${BIND_IP:?Set EC2 private IPv4}:8000:8000"
+    volumes:
+      - ${LOCAL_DATA:?Set absolute local shard directory}:/data:ro
+      - worker-cache:/cache
+    cpus: "1.0"
+    mem_limit: 2g
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 10s
+      timeout: 3s
+      retries: 30
+volumes:
+  worker-cache:

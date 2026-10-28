@@ -1,0 +1,79 @@
+x-worker: &worker
+  image: budget-dt:local
+  build:
+    context: .
+    dockerfile: Dockerfile.dt
+  init: true
+  restart: unless-stopped
+  cpus: "1.0"
+  mem_limit: 2g
+  environment: &env
+    DT_TOKEN: ${DT_TOKEN:?Set DT_TOKEN in .env}
+    DATA_DIR: /data
+    CACHE_DIR: /cache
+    OMP_NUM_THREADS: "1"
+  healthcheck:
+    test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+    interval: 5s
+    timeout: 3s
+    retries: 30
+services:
+  client0:
+    <<: *worker
+    environment:
+      <<: *env
+      CLIENT_ID: "0"
+    volumes:
+      - ./provision/client0:/data:ro
+      - cache0:/cache
+  client1:
+    <<: *worker
+    environment:
+      <<: *env
+      CLIENT_ID: "1"
+    volumes:
+      - ./provision/client1:/data:ro
+      - cache1:/cache
+  client2:
+    <<: *worker
+    environment:
+      <<: *env
+      CLIENT_ID: "2"
+    volumes:
+      - ./provision/client2:/data:ro
+      - cache2:/cache
+  client3:
+    <<: *worker
+    environment:
+      <<: *env
+      CLIENT_ID: "3"
+    volumes:
+      - ./provision/client3:/data:ro
+      - cache3:/cache
+  client4:
+    <<: *worker
+    environment:
+      <<: *env
+      CLIENT_ID: "4"
+    volumes:
+      - ./provision/client4:/data:ro
+      - cache4:/cache
+  central:
+    image: budget-dt:local
+    build:
+      context: .
+      dockerfile: Dockerfile.dt
+    environment:
+      DT_TOKEN: ${DT_TOKEN:?Set DT_TOKEN in .env}
+      OMP_NUM_THREADS: "1"
+    volumes:
+      - ./provision/central:/case:ro
+      - ./runs/dt:/runs
+    entrypoint: ["python", "-m", "dt.coordinator"]
+    profiles: ["tools"]
+volumes:
+  cache0:
+  cache1:
+  cache2:
+  cache3:
+  cache4:

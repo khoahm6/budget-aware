@@ -1,0 +1,19 @@
+{
+  ".dockerignore": "bacd00f475c62739e409335d13d22d5b4d86e095284f1560b543929acbc8db43",
+  ".env.example": "f684f4dd3ae20b8e88fd2c76c76eae7e52191cb2f6a1d681eb200a27d22a86e6",
+  "compose.dt.yaml": "ba119c1ec2b14c215d168c8586e6b891a6c04379797424568cd8de427530f210",
+  "compose.ec2-worker.yaml": "40ff6c6d257d6901c2d6cd4606b5ef3db231d9a279201b8aaf36b0840dcca3e9",
+  "Dockerfile.dt": "6b9ac1d990ed60f0034f50d658da689e24997e9414ebb98d0a5649fb88a401f0",
+  "HUONG_DAN_DIGITAL_TWIN.md": "c4cc2bda8dc35b0b1669aa1e92ab54c600855bc9769a21a6f8d4c7eac1d259f2",
+  "README.md": "265d4d06687f2516598a29aaf27ca0e96de40aedbf259a29284e1ea5faa5c934",
+  "requirements-dt.txt": "ce209f76c5be87f4655c47483050a47c32348ee8fddc4632ac8a465f035e7f89",
+  "VALIDATION.md": "441550238abb2134a90ec8a7c07356d61c66b0d27280a3a65b93fb1680bec81e",
+  "dt/codec.py": "0929f1f6dcd59a554b0e3629e96e7cb51cc3fbf42fcacfdc9c858fc84797d2f7",
+  "dt/coordinator.py": "b3f6dcd8fb87824f92eac0687d05c74beae950ce8d46519fc0417a040dd1b61d",
+  "dt/export_case.py": "c84a4076023192284df3506dee8fcec429949c2cfc450aac4e1b6c29a714b2cc",
+  "dt/planner.py": "f96e4ac57f07d7501b1335c4da18ce7dcec9834475096ff04b7cb5b532d9c80d",
+  "dt/summarize.py": "daa2544d191a32e01fd356538d5eff54f88b4a3a871eed5086e96fff9621eede",
+  "dt/worker.py": "90ef11e6e1e95e431dd51eed850528a098122a3a8d4a1492e91cd04d7586dbbe",
+  "dt/__init__.py": "71fdd4ee4d2eb2d247adcca646bca3ba8ee55c642c02ae188cf836428de9f7d4",
+  "tests/test_dt.py": "4b2d67d2490275f4e9b0a97613136a2326c9050de0b8d23fb2533afe4c7496b4"
+}

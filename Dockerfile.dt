@@ -1,0 +1,10 @@
+FROM python:3.11-slim-bookworm
+WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
+RUN apt-get update && apt-get install -y --no-install-recommends iproute2 ca-certificates && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+COPY requirements-ml.txt requirements-dt.txt ./
+RUN pip install --no-cache-dir -r requirements-ml.txt -r requirements-dt.txt
+COPY src ./src
+COPY dt ./dt
+CMD ["python", "-m", "uvicorn", "dt.worker:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]

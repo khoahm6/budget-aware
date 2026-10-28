@@ -1,0 +1,10 @@
+.git
+data
+dataset
+runs
+provision
+work
+.venv
+.env
+**/__pycache__
+*.pdf
